@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize');
 
-var dbName = 'golfDB';
-var user = 'root';
-var pass = 'spaceship';
+var dbName = 'dbName';
+var user = 'user';
+var pass = 'pass';
 
 var sequelize = new Sequelize(dbName,user,pass,{'host':'localhost','dialect':'mysql'});
 module.exports = sequelize;
