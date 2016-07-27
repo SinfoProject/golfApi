@@ -13,16 +13,16 @@ Documentación para la REST API de golf
 ---
 # FIELD
 Accioens relacionadas con *Campos*
-## Get 
-* ### /field
-Devuelve un `Array` con todos los registros de campos existentes.
 
+## Get 
+* #### /field
+Devuelve un `Array` con todos los registros de campos existentes.
 
 * #### /field/:fieldId
 Devuelve un campo con el ID especificado.
 
 ## Post
-* ### /field
+* #### /field
 Crea un nuevo campo, y crea la canitdad de hoyos especificada para dicho campo.
 
 #### Recibe
