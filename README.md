@@ -15,14 +15,14 @@ Documentación para la REST API de golf
 Accioens relacionadas con *Campos*
 
 ## Get 
-* #### /field
+### /field
 Devuelve un `Array` con todos los registros de campos existentes.
 
-* #### /field/:fieldId
+### /field/:fieldId
 Devuelve un campo con el ID especificado.
 
 ## Post
-* #### /field
+### /field
 Crea un nuevo campo, y crea la canitdad de hoyos especificada para dicho campo.
 
 #### Recibe
@@ -37,14 +37,14 @@ Crea un nuevo campo, y crea la canitdad de hoyos especificada para dicho campo.
 ```
 
 ## Put
-* ### /field/:fieldId
+### /field/:fieldId
 Actualiza los valores de los hoyos creados para el campo especificado.
 
 #### Recibe
 Working
 
 ## Delete
-* ### /field/:fieldId
+### /field/:fieldId
 Elimina el campo con el ID especificado.
 
 ---
@@ -54,15 +54,15 @@ Elimina el campo con el ID especificado.
 # GAME
 Accioens relacionadas con *Juegos*
 ## Get 
-* ### /game
+### /game
 Devuelve un `Array` con todos los registros de juegos existentes.
 
 
-* #### /game/:gameId
+#### /game/:gameId
 Devuelve un juego con el ID especificado.
 
 ## Post
-* ### /game
+### /game
 Crea un nuevo juego con los datos especificados.
 
 #### Recibe
@@ -79,7 +79,7 @@ Crea un nuevo juego con los datos especificados.
 ```
 
 ## Put
-* ### /game/:gameId
+### /game/:gameId
 Actualiza los valores del campo especificado.
 
 #### Recibe
@@ -100,7 +100,7 @@ Actualiza los valores del campo especificado.
 ```
 
 ## Delete
-* ### /game/:gameId
+### /game/:gameId
 Elimina el juego con el ID especificado.
 
 ---
@@ -110,15 +110,15 @@ Elimina el juego con el ID especificado.
 # PLAYER
 Accioens relacionadas con *Jugadores*
 ## Get 
-* ### /player
+### /player
 Devuelve un `Array` con todos los registros de jugadores existentes.
 
 
-* #### /player/:playerId
+#### /player/:playerId
 Devuelve un jugador con el ID especificado.
 
 ## Post
-* ### /player
+### /player
 Crea un nuevo jugador con los datos especificados Y crea los hoyos correspondientes segun el numero de hoyos disponibles en el campo.
 
 #### Recibe
@@ -135,7 +135,7 @@ Crea un nuevo jugador con los datos especificados Y crea los hoyos correspondien
 ```
 
 ## Put
-* ### /player/:playerId
+### /player/:playerId
 Actualiza los valores del jugador con el ID seleccionado
 
 #### Recibe
@@ -151,7 +151,7 @@ Actualiza los valores del jugador con el ID seleccionado
 }
 ```
 
-* ### /player/:playerId/hole
+### /player/:playerId/hole
 Actualiza los valores del hoyo especificado del jugador designado por playerId
 
 #### Recibe
@@ -168,7 +168,7 @@ Actualiza los valores del hoyo especificado del jugador designado por playerId
 ```
 
 ## Delete
-* ### /player/:playerId
+### /player/:playerId
 Elimina el jugador con el ID especificado.
 
 ---
@@ -178,15 +178,15 @@ Elimina el jugador con el ID especificado.
 # TEAM
 Accioens relacionadas con *Equipos*
 ## Get 
-* ### /team
+### /team
 Devuelve un `Array` con todos los registros de equipos existentes.
 
 
-* #### /team/:teamId
+#### /team/:teamId
 Devuelve un equipo con el ID especificado.
 
 ## Post
-* ### /team
+### /team
 Crea un nuevo equipo con el nombre especificados.
 
 #### Recibe
@@ -199,7 +199,7 @@ Crea un nuevo equipo con el nombre especificados.
 ```
 
 ## Put
-* ### /team/:teamId
+### /team/:teamId
 Actualiza el nombre del equipo con el ID especificado.
 #### Recibe
 > - name	=> `STRING`
@@ -211,5 +211,5 @@ Actualiza el nombre del equipo con el ID especificado.
 ```
 
 ## Delete
-* ### /team/:teamId
+### /team/:teamId
 Elimina el equipo con el ID especificado.
