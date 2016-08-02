@@ -5,7 +5,7 @@ var
 async 		= require('async'),
 sequelize	= require('../database'),
 Field  		= sequelize.import('../models/Field'),
-HolesField  		= sequelize.import('../models/HolesField');
+HolesField  = sequelize.import('../models/HolesField');
 
 module.exports = function(app){
 	
@@ -50,28 +50,34 @@ module.exports = function(app){
 			name : data.name,
 			nHoles : data.nHoles
 		}
-		var holes = {
-			h1 : data.h1, h2 : data.h2, h3 : data.h3, h4 : data.h4, h5 : data.h5,
-			h6 : data.h6, h7 : data.h7, h8 : data.h8, h9 : data.h9, h10 : data.h10,
-			h11 : data.h11, h12 : data.h12, h13 : data.h13, h14 : data.h14, h15 : data.h15,
-			h16 : data.h16, h17 : data.h17, h18 : data.h18
-		}
 
 		Field.update(field,{
 			where : {
 				id : fieldId
 			}
 		}).then(function (fieldRes){
-			Field.findById(fieldId).then(function (fieldFinded){
-				HolesField.update(holes,{
-					where : {
-						id : fieldFinded.holesFieldId
-					}
-				}).then(function (holesRes){
-					res.json(fieldFinded);
-				});
+			res.json(fieldRes);
+		});
+	});
+	app.put('/field/:fieldId/holes',function (req,res){
+		var fieldId = req.params.fieldId;
+		var data = req.body
+		async.forEachOf(data, function (hole,key,callback){
+			var keyAux = key;
+			keyAux++;
+			console.log(keyAux);
+			var holeObj = {
+				par : hole
+			}
+			HolesField.update(holeObj,{
+				where : {
+					hole : keyAux
+				}
+			}).then(function (){
+				callback();
 			});
 		});
+		res.json();
 	});
 	app.delete('/field/:fieldId',function (req,res){
 		var fieldId = req.params.fieldId;
@@ -88,8 +94,11 @@ module.exports = function(app){
 						}
 					}).then(function (holesRes){
 						res.json(holesRes);
-					});
+					})
 				}
+				res.json(rows);
+			}).catch(function (err) {
+				res.json({error:err});
 			});
 		});
 	});
