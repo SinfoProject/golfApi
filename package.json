@@ -1,0 +1,30 @@
+{
+  "name": "golfapi",
+  "version": "1.0.0",
+  "description": "API de administración de golf",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinfoProject/golfApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinfoProject/golfApi/issues"
+  },
+  "homepage": "https://github.com/SinfoProject/golfApi#readme",
+  "dependencies": {
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "moment": "^2.14.1",
+    "mysql": "^2.11.1",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.10.0",
+    "sequelize": "^3.23.6"
+  }
+}
