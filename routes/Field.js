@@ -7,8 +7,7 @@ sequelize	= require('../database'),
 Field  		= sequelize.import('../models/Field'),
 HolesField  = sequelize.import('../models/HolesField');
 
-module.exports = function(app){
-	
+module.exports = function(app,io){
 	app.post('/field',function (req,res){
 		var data = req.body;
 		var field = {

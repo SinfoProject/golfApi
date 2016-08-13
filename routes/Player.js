@@ -9,7 +9,7 @@ Game  		= sequelize.import('../models/Game'),
 Player  	= sequelize.import('../models/Player'),
 HolesPlayer = sequelize.import('../models/HolesPlayer');
 
-module.exports = function(app){
+module.exports = function(app,io){
 
 	app.post('/player',function (req,res){
 		var data = req.body;
@@ -35,6 +35,9 @@ module.exports = function(app){
 							callback('hole');
 						});
 					});
+
+					io.emit('add-player', playerRes);
+
 					res.json(playerRes);
 				});
 			});
