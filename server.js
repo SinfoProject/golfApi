@@ -13,7 +13,8 @@ var
 RouteField 	= require('./routes/Field')(app),
 RouteGame 	= require('./routes/Game')(app),
 RoutePlayer = require('./routes/Player')(app),
-RouteTeam 	= require('./routes/Team')(app);
+RouteTeam 	= require('./routes/Team')(app),
+RouteUser 	= require('./routes/User')(app);
 
 
 
