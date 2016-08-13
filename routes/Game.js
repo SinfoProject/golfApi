@@ -8,7 +8,7 @@ Player  	= sequelize.import('../models/Player'),
 Field  		= sequelize.import('../models/Field'),
 HolesPlayer = sequelize.import('../models/HolesPlayer');
 
-module.exports = function(app){
+module.exports = function(app,io){
 	app.post('/game',function (req,res){
 		var data = req.body;
 		Game.create(data).then(function (gameRes){
