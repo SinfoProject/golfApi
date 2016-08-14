@@ -80,12 +80,14 @@ module.exports = function(app,io){
 	});
 	app.delete('/field/:fieldId',function (req,res){
 		var fieldId = req.params.fieldId;
-		Field.findById(fieldId).then(function (fieldRes){
+		Field.findById(fieldId)
+		.then(function (fieldRes){
 			Field.destroy({
 				where : {
 					id : fieldId
 				}
-			}).then(function (rows){
+			})
+			.then(function (rows){
 				if(rows == 1){
 					HolesField.destroy({
 						where : {
@@ -96,7 +98,8 @@ module.exports = function(app,io){
 					})
 				}
 				res.json(rows);
-			}).catch(function (err) {
+			})
+			.catch(function (err) {
 				res.json({error:err});
 			});
 		});

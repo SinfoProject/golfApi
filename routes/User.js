@@ -17,6 +17,7 @@ module.exports = function(app){
 			res.json(userRes);
 		});
 	});
+	////////////////////////////////////////////////
 	app.get('/user',function (req,res){
 		User.findAll().then(function (userRes){
 			res.json(userRes);
@@ -28,4 +29,37 @@ module.exports = function(app){
 			res.json(userRes);
 		});
 	});
+	//////////////////////////////////////////////
+	app.put('/user/:userId',function (req,res){
+		var userId = req.params.userId;
+		var data = req.body;
+		var user = {
+			name : data.name,
+			pass : data.pass
+		}
+
+		User.update(user,
+		{
+			where : 
+			{
+				id : userId
+			}
+		})
+		.then(function (userRes)
+		{
+			res.json(userRes);
+		});
+	});
+	//////////////////////////////////////////////
+	app.delete('/user/:userId',function (req,res){
+		var userId = req.params.userId;
+		User.destroy({
+			where: {
+				id: userId
+			}
+		}).then(function (userRes){
+			res.json(userRes);
+		});
+	});
+	//////////////////////////////////////////////
 }
