@@ -27,4 +27,5 @@ RoutePlayer = require('./routes/Player')(app,io),
 RouteField 	= require('./routes/Field')(app,io),
 RouteGame 	= require('./routes/Game')(app,io),
 RouteTeam 	= require('./routes/Team')(app,io),
-RouteUser 	= require('./routes/User')(app,io);
+RouteUser 	= require('./routes/User')(app,io),
+RouteLogin 	= require('./routes/Login')(app,io);
